@@ -344,23 +344,13 @@
             if (projectId === 'snipe') {
                 body.innerHTML = `
                     <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
-                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
-                            <div class="flex-1">
-                                <div class="flex items-center gap-6 mb-8">
-                                    <div class="w-12 h-12 bg-black text-white rounded flex items-center justify-center font-black text-xl">S</div>
-                                    <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Case Study 01</div>
-                                </div>
-                                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 uppercase leading-[0.9]">Snipe <br> inBOX.</h1>
-                                <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs">AMP-Powered Interactive Marketing</p>
-                            </div>
-                            <!-- Header Screenshot Placement: inBoxWire1.png -->
-                            <div class="flex-1 w-full max-w-sm">
-                                <div class="browser-mockup bg-white shadow-xl rotate-2">
-                                    <div class="browser-header">
-                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
-                                    </div>
-                                    <img src="assets/inBoxWire1.png" onerror="this.src='https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-40')" class="w-full h-auto" alt="Product Wireframe 1" />
-                                </div>
+                        <div class="max-w-4xl mx-auto flex items-center gap-10">
+                            <!-- Logo Placeholder -->
+                            <div class="w-20 h-20 bg-black text-white rounded-2xl flex items-center justify-center font-black text-3xl shrink-0 shadow-lg">S</div>
+                            <div>
+                                <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest mb-4">Case Study 01</div>
+                                <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">Snipe inBOX.</h1>
+                                <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs mt-4">AMP-Powered Interactive Marketing</p>
                             </div>
                         </div>
                         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mt-20">
@@ -391,8 +381,8 @@
                                 <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">Mapping the Friction.</h3>
                                 <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Traditional emails were static dead-ends. User analytics showed a <strong>65% drop-off</strong> between email click and landing page load. Below is the <strong>Legacy User Journey</strong> illustrating the multi-step friction we aimed to eliminate.</p>
                                 
-                                <div class="browser-mockup bg-zinc-50 mb-10 overflow-hidden border border-zinc-200">
-                                    <img src="assets/Journey1.png" onerror="this.style.display='none'" class="w-full h-auto" alt="Journey Mapping 1" />
+                                <div class="browser-mockup bg-zinc-50 mb-10 overflow-hidden border border-zinc-200 max-h-[450px]">
+                                    <img src="assets/Journey1.png" onerror="this.style.display='none'" class="w-full h-full object-contain" alt="Journey Mapping 1" />
                                 </div>
 
                                 <div class="bg-zinc-900 text-white p-8 border border-zinc-800">
@@ -432,20 +422,29 @@
                             </div>
                         </div>
 
-                        <!-- 03 Interaction Design & Wireframes: inBoxWire2.png -->
+                        <!-- 03 Interaction Design & Wireframes: inBoxWire1 and inBoxWire2 -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5 translate-x-0">03</div>
                             <div class="flex-1 w-full">
                                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Interaction Design</span>
                                 <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">Refining the Interface.</h3>
-                                <p class="text-lg text-zinc-500 mb-8 font-light leading-relaxed">I led the design of "Mini-App" components. The challenge was maintaining email lightweight constraints while providing a modern app feel. Below is our <strong>Iteration 2 Wireframe</strong> for the in-email cart component.</p>
+                                <p class="text-lg text-zinc-500 mb-8 font-light leading-relaxed">I led the design of "Mini-App" components. The challenge was maintaining email lightweight constraints while providing a modern app feel.</p>
                                 
-                                <div class="browser-mockup bg-zinc-100 mb-8 flex flex-col group overflow-hidden border-2 border-zinc-200">
-                                    <div class="browser-header">
-                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
-                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">High-Fidelity Wireframe (Iteration 2)</span>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                                    <div class="browser-mockup bg-zinc-50 overflow-hidden border border-zinc-200 max-h-[350px]">
+                                        <div class="browser-header">
+                                            <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                            <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">Wireframe V1</span>
+                                        </div>
+                                        <img src="assets/inBoxWire1.png" onerror="this.style.display='none'" class="w-full h-full object-contain" />
                                     </div>
-                                    <img src="assets/inBoxWire2.png" onerror="this.style.display='none'" class="w-full h-auto" alt="High Fidelity Wireframe" />
+                                    <div class="browser-mockup bg-zinc-50 overflow-hidden border border-zinc-200 max-h-[350px]">
+                                        <div class="browser-header">
+                                            <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                            <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">Wireframe V2</span>
+                                        </div>
+                                        <img src="assets/inBoxWire2.png" onerror="this.style.display='none'" class="w-full h-full object-contain" />
+                                    </div>
                                 </div>
                                 <p class="text-sm text-zinc-400 italic">"We prioritized the 'In-Email RSVP' as our primary validation point for technical feasibility."</p>
                             </div>
@@ -459,8 +458,8 @@
                                 <h3 class="text-3xl font-black tracking-tight mb-12 uppercase">Optimized Flow.</h3>
                                 <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">The post-launch <strong>Optimized Journey</strong> reduced the path to conversion from 5 steps to just 1. Analytics confirmed a massive increase in engagement.</p>
                                 
-                                <div class="browser-mockup bg-zinc-50 mb-12 overflow-hidden border border-zinc-200">
-                                    <img src="assets/Journey2.png" onerror="this.style.display='none'" class="w-full h-auto" alt="Optimized Journey" />
+                                <div class="browser-mockup bg-zinc-50 mb-12 overflow-hidden border border-zinc-200 max-h-[450px]">
+                                    <img src="assets/Journey2.png" onerror="this.style.display='none'" class="w-full h-full object-contain" alt="Optimized Journey" />
                                 </div>
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-100 border border-zinc-100">

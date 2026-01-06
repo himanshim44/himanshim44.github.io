@@ -50,7 +50,7 @@
             color: #d4d4d8;
         }
 
-        /* Vertical Timeline - Left-aligned to avoid text overlap */
+        /* Vertical Timeline - Left aligned to avoid text overlap */
         .flow-line {
             position: absolute;
             left: 20px;
@@ -59,10 +59,6 @@
             width: 1px;
             background: repeating-linear-gradient(to bottom, #e4e4e7, #e4e4e7 10px, transparent 10px, transparent 20px);
             z-index: 0;
-        }
-
-        @media (min-width: 768px) {
-            .flow-line { left: 40px; }
         }
 
         .flow-node {
@@ -96,6 +92,41 @@
             border-bottom: 1px solid #e4e4e7;
         }
         .mock-dot { width: 8px; height: 8px; border-radius: 50%; background: #d4d4d8; }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.04);
+        }
+
+        .comp-card {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .comp-card:hover {
+            background: #fafafa;
+        }
+        .plus-icon {
+            transition: transform 0.4s ease;
+        }
+        .comp-card:hover .plus-icon {
+            transform: rotate(90deg);
+        }
+
+        /* Presentation Scroll Container */
+        .presentation-frame {
+            width: 100%;
+            height: 0;
+            padding-top: 56.25%;
+            border: 1px solid #e4e4e7;
+            border-radius: 8px;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+        }
     </style>
 </head>
 <body class="bg-white text-zinc-900 leading-relaxed">
@@ -141,35 +172,37 @@
 
     <!-- Work Grid -->
     <section id="work" class="py-20 px-6 max-w-5xl mx-auto border-t border-zinc-100">
-        <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-zinc-400 mb-12">Case Studies</h2>
+        <div class="flex items-baseline justify-between mb-12">
+            <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-zinc-400">Case Studies</h2>
+            <span class="text-[10px] text-zinc-300 font-bold uppercase tracking-widest italic">Click to view deep dive</span>
+        </div>
+        
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-24">
             
             <!-- Project 1: Snipe inBOX -->
-            <div class="group cursor-pointer" onclick="openDrawer('snipe')">
-                <div class="browser-mockup mb-8 group-hover:shadow-2xl transition-all duration-500">
+            <div class="group cursor-pointer hover-lift" onclick="openDrawer('snipe')">
+                <div class="browser-mockup mb-8 group-hover:border-zinc-900 overflow-hidden relative">
                     <div class="browser-header">
                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
                     </div>
                     <div class="aspect-[16/10] bg-zinc-50 overflow-hidden relative">
-                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors z-10 flex items-center justify-center">
-                            <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-white text-black text-[10px] font-bold px-4 py-2 tracking-widest uppercase shadow-sm">Explore Strategy</span>
-                        </div>
                         <img src="https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&q=80&w=1000" 
                              class="w-full h-full object-cover grayscale transition duration-700 opacity-90 group-hover:scale-105 group-hover:grayscale-0">
                     </div>
                 </div>
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold tracking-tight">Snipe inBOX</h3>
+                    <h3 class="text-xl font-bold tracking-tight group-hover:text-zinc-600 transition-colors">Snipe inBOX</h3>
                     <span class="text-[11px] font-bold uppercase tracking-widest text-zinc-400 py-1 px-2 border border-zinc-200">Interactive Email</span>
                 </div>
                 <p class="text-zinc-500 text-sm leading-relaxed mb-6">
                     Optimization of email conversion through AMP technology resulting in a <span class="text-zinc-900 font-medium">+40% lift</span>.
                 </p>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-900 underline underline-offset-4">View Strategy →</span>
             </div>
 
-            <!-- Project 2 -->
-            <div class="group cursor-pointer">
-                <div class="browser-mockup mb-8 opacity-60">
+            <!-- Project 2 Placeholder -->
+            <div class="group cursor-pointer opacity-50">
+                <div class="browser-mockup mb-8">
                     <div class="browser-header">
                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
                     </div>
@@ -179,35 +212,63 @@
                     <h3 class="text-xl font-bold tracking-tight">Future Project</h3>
                     <span class="text-[11px] font-bold uppercase tracking-widest text-zinc-400 py-1 px-2 border border-zinc-200">SaaS</span>
                 </div>
-                <p class="text-zinc-500 text-sm leading-relaxed">Strategic documentation in progress.</p>
+                <p class="text-zinc-500 text-sm leading-relaxed mb-6">Documentation and metrics integration in progress.</p>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-300">Under Construction</span>
             </div>
         </div>
     </section>
 
     <!-- Competitions Section -->
     <section id="competitions" class="py-20 px-6 max-w-5xl mx-auto border-t border-zinc-100">
-        <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-zinc-400 mb-12">Competitions & Hackathons</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-                <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">2023 • Global Hackathon</div>
-                <h4 class="text-lg font-bold mb-3 tracking-tight italic">1st Place — FinTech Innovation</h4>
-                <p class="text-xs text-zinc-500 leading-relaxed">
-                    Led a cross-functional team to build an AI-driven credit scoring model. Managed the product roadmap from ideation to final pitch.
-                </p>
+        <div class="flex flex-col md:flex-row justify-between items-baseline mb-12">
+            <h2 class="text-xs font-bold uppercase tracking-[0.3em] text-zinc-400">Competitions & Venture Challenges</h2>
+            <span class="text-[10px] text-zinc-300 font-bold uppercase tracking-widest italic">Click to expand details</span>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+            <!-- Comp 1: Regnier -->
+            <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('regnier')">
+                <div>
+                    <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">Venture Challenge</div>
+                    <h4 class="text-lg font-bold tracking-tight group-hover:text-zinc-600 transition-colors">Regnier Venture Creation Challenge</h4>
+                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Kansas • Finalist (Selected Top 12 of 80 Applications)</p>
+                </div>
+                <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
+                    <span class="text-lg font-light leading-none">+</span>
+                </div>
             </div>
-            <div>
-                <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">2022 • Case Challenge</div>
-                <h4 class="text-lg font-bold mb-3 tracking-tight italic">Finalist — Product Strategy</h4>
-                <p class="text-xs text-zinc-500 leading-relaxed">
-                    Designed a market entry strategy for a major streaming platform. Conducted competitive analysis and user segmentation.
-                </p>
+            
+            <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('michigan')">
+                <div>
+                    <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">Startup Fund</div>
+                    <h4 class="text-lg font-bold tracking-tight">Michigan Startup Fund 5x5</h4>
+                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">High-stakes 5-minute pitch for funding.</p>
+                </div>
+                <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
+                    <span class="text-lg font-light leading-none">+</span>
+                </div>
             </div>
-            <div>
-                <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">2021 • Startup Weekend</div>
-                <h4 class="text-lg font-bold mb-3 tracking-tight italic">Winner — Best UI/UX</h4>
-                <p class="text-xs text-zinc-500 leading-relaxed">
-                    Validated a circular economy concept through rapid user testing. Built a functional MVP prototype in 48 hours.
-                </p>
+
+            <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('isuprize')">
+                <div>
+                    <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">Innovation Prize</div>
+                    <h4 class="text-lg font-bold tracking-tight">Iowa State Innovation Prize</h4>
+                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Cross-disciplinary problem solving challenge.</p>
+                </div>
+                <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
+                    <span class="text-lg font-light leading-none">+</span>
+                </div>
+            </div>
+
+            <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('isuhack')">
+                <div>
+                    <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">College Hackathon</div>
+                    <h4 class="text-lg font-bold tracking-tight">Iowa State Business College Hackathon</h4>
+                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Intensive product sprint and business modeling.</p>
+                </div>
+                <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
+                    <span class="text-lg font-light leading-none">+</span>
+                </div>
             </div>
         </div>
     </section>
@@ -224,16 +285,16 @@
                 <div class="text-[10px] uppercase font-bold text-zinc-300">Powered by Gemini 2.5 Flash</div>
             </div>
 
-            <div class="md:w-2/3 bg-white border border-zinc-200 p-8 md:p-12">
+            <div class="md:w-2/3 bg-white border border-zinc-200 p-8 md:p-12 shadow-sm">
                 <div class="space-y-8">
                     <div class="relative">
-                        <label class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 block mb-4">Product Concept / Challenge</label>
+                        <label class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 block mb-4 italic">Product Concept / Challenge</label>
                         <textarea id="lab-input" rows="3" 
                             class="w-full minimal-input py-2 text-lg resize-none placeholder:text-zinc-200" 
                             placeholder="A social app for urban gardeners..."></textarea>
                     </div>
                     
-                    <button id="lab-submit" class="group flex items-center space-x-4 text-sm font-bold uppercase tracking-widest">
+                    <button id="lab-submit" class="group flex items-center space-x-4 text-sm font-bold uppercase tracking-widest bg-black text-white px-6 py-4 hover:bg-zinc-800 transition">
                         <span>Generate Roadmap</span>
                         <div id="lab-loading" class="hidden flex space-x-1">
                             <span class="loading-dot text-lg">.</span>
@@ -253,38 +314,6 @@
         </div>
     </section>
 
-    <!-- Toolkit -->
-    <section id="toolkit" class="py-32 px-6 max-w-5xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div>
-                <h4 class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-6">Strategy</h4>
-                <ul class="text-sm space-y-3 font-medium">
-                    <li>Market Discovery</li>
-                    <li>A/B Testing & Analysis</li>
-                    <li>Roadmap Planning</li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-6">Execution</h4>
-                <ul class="text-sm space-y-3 font-medium">
-                    <li>Figma Prototypes</li>
-                    <li>Technical Specs (PRDs)</li>
-                    <li>SQL / Data Querying</li>
-                </ul>
-            </div>
-            <div class="bg-zinc-900 text-white p-8 text-center">
-                <h4 class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-6 italic">Case Study Enhancer</h4>
-                <div class="flex flex-col space-y-4">
-                    <input id="enhancer-input" type="text" 
-                        class="bg-transparent border-b border-zinc-700 text-xs py-2 focus:outline-none focus:border-white transition text-center" 
-                        placeholder="e.g. Redesigned a page">
-                    <button id="enhancer-btn" class="text-[10px] font-bold uppercase tracking-widest self-center border border-zinc-700 px-4 py-2 hover:bg-white hover:text-black transition">Process</button>
-                    <div id="enhancer-result" class="hidden text-[11px] text-zinc-300 leading-relaxed pt-4 border-t border-zinc-800 italic"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="py-24 px-6 max-w-5xl mx-auto border-t border-zinc-100 flex flex-col md:flex-row justify-between items-center gap-8">
         <div class="text-[13px] font-medium text-zinc-400">© 2024 Built with Code & Strategy</div>
@@ -295,7 +324,7 @@
         </div>
     </footer>
 
-    <!-- Full-Screen Case Study Drawer -->
+    <!-- Full-Screen Drawer -->
     <div id="drawer" class="fixed inset-0 z-[100] invisible transition-all duration-500 overflow-hidden">
         <div class="absolute inset-0 bg-white" onclick="closeDrawer()"></div>
         <div id="drawer-content" class="absolute inset-0 bg-white translate-x-full transition-transform duration-500 overflow-y-auto">
@@ -304,7 +333,6 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
 
-            <!-- Case Study Content -->
             <div id="case-study-body" class="bg-white pb-32">
                 <!-- Dynamic Content -->
             </div>
@@ -340,123 +368,112 @@
         }
 
         // Drawer Logic
-        function openDrawer(projectId) {
+        function openDrawer(id) {
             const drawer = document.getElementById('drawer');
             const content = document.getElementById('drawer-content');
             const body = document.getElementById('case-study-body');
             document.body.style.overflow = 'hidden';
+            body.innerHTML = '';
 
-            if (projectId === 'snipe') {
+            if (id === 'snipe') {
                 body.innerHTML = `
                     <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
-                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
+                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
                             <div class="flex-1">
                                 <div class="flex items-center gap-6 mb-8">
-                                    <div class="w-12 h-12 bg-black text-white rounded flex items-center justify-center font-black text-xl">S</div>
+                                    <div class="w-12 h-12 bg-black text-white rounded flex items-center justify-center font-black text-xl shadow-lg">S</div>
                                     <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Case Study 01</div>
                                 </div>
-                                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-8 uppercase leading-[0.9]">Snipe <br> inBOX.</h1>
-                                <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs">AMP-Powered Interactive Marketing</p>
+                                <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase leading-none">Snipe inBOX.</h1>
+                                <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs mt-4">AMP-Powered Interactive Marketing</p>
                             </div>
                             <div class="flex-1 w-full max-w-sm">
                                 <div class="browser-mockup bg-white shadow-xl rotate-2">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
                                     </div>
-                                    <img src="assets/snipe-hero.png" onerror="this.src='https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-40')" class="w-full h-auto" alt="Product Screenshot" />
+                                    <img src="assets/inBoxWire2.png" onerror="this.src='https://images.unsplash.com/photo-1557200134-90327ee9fafa?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-40')" class="w-full h-auto" alt="Product Screenshot" />
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="max-w-4xl mx-auto px-6 py-32 relative">
-                        <div class="flow-line"></div>
+                        <div class="flow-line left-[20px] md:left-[40px]"></div>
 
-                        <!-- 01 Discovery & User Journey -->
-                        <div class="flex gap-12 mb-32 items-start relative pl-20 md:pl-32">
-                            <div class="flow-node shrink-0 absolute left-0 md:left-0">01</div>
+                        <!-- 01 Discovery & Competition Analysis -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
                             <div class="flex-1">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Discovery & User Journey</span>
-                                <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">Mapping the Friction.</h3>
-                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Traditional emails were static dead-ends. User analytics showed a <strong>65% drop-off</strong> between email click and landing page load. Users didn't want to leave their inbox; they wanted to finish the task.</p>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Discovery & Competition Analysis</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Mapping the Friction.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Traditional emails were dead-ends. User analytics showed a <strong>65% drop-off</strong> between email click and landing page load. While standard players like Mailchimp focused on "Better Templates," I identified the true market barrier was <strong>redirection friction.</strong></p>
                                 
                                 <div class="browser-mockup bg-zinc-100 mb-10 overflow-hidden border-2 border-zinc-200">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
-                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">User Journey Map</span>
+                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">User Journey Mapping</span>
                                     </div>
-                                    <img src="assets/inBoxWire2.png" onerror="this.src='https://via.placeholder.com/800x450?text=Paste+Journey+Map+PNG+Here'; this.classList.add('opacity-20')" class="w-full h-auto" alt="User Journey Map" />
+                                    <img src="assets/Journey2.png" onerror="this.src='https://via.placeholder.com/800x450?text=Journey+Map'; this.classList.add('opacity-20')" class="w-full h-auto" />
                                 </div>
 
                                 <div class="bg-zinc-900 text-white p-8">
-                                    <h4 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-6 italic">Competition Analysis Matrix</h4>
+                                    <h4 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-6 italic">Strategic Advantage Matrix</h4>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                                         <div>
                                             <p class="text-[10px] text-zinc-500 font-bold uppercase mb-2">Market Standard</p>
-                                            <p class="text-sm">Static HTML, High Latency, 3+ steps to conversion.</p>
+                                            <p class="text-sm">Static HTML, High Latency, 3+ steps to browser conversion.</p>
                                         </div>
                                         <div>
                                             <p class="text-[10px] text-zinc-400 font-bold uppercase mb-2">Snipe Advantage</p>
-                                            <p class="text-sm text-white font-medium">AMP-Powered, Zero Redirection, 1-step checkout.</p>
+                                            <p class="text-sm text-white font-medium">AMP-Powered, Zero Redirection, 1-step in-inbox interaction.</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 02 Strategic Planning & Wireframes -->
-                        <div class="flex gap-12 mb-32 items-start relative pl-20 md:pl-32">
-                            <div class="flow-node shrink-0 absolute left-0 md:left-0">02</div>
+                        <!-- 02 Prioritization & PRDs -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
                             <div class="flex-1">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Planning & Wireframes</span>
-                                <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">Low-Fi Logic.</h3>
-                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">I utilized the <strong>RICE Framework</strong> to align the roadmap. Before building high-fidelity mocks, I drafted wireframes to validate the "In-Email Survey" logic with stakeholders.</p>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Planning, PRDs & Prioritization</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Logic & Planning.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">I utilized the <strong>RICE Framework</strong> to align the engineering roadmap. High-impact features like "In-Email RSVP" were prioritized over custom animations to drive immediate ROI for our e-commerce beta testers. I authored detailed PRDs to define the <strong>Fallback Logic</strong>—ensuring 100% deliverability for non-AMP clients.</p>
                                 
-                                <div class="browser-mockup bg-zinc-100 mb-10 overflow-hidden border-2 border-zinc-200">
+                                <div class="browser-mockup bg-zinc-50 mb-10 overflow-hidden border border-zinc-200">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
-                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">Low-Fidelity Wireframes</span>
+                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">Strategic Wireframes</span>
                                     </div>
-                                    <img src="assets/inBoxWire1.png" onerror="this.src='https://via.placeholder.com/800x450?text=Paste+Wireframe+PNG+Here'; this.classList.add('opacity-20')" class="w-full h-auto" alt="Snipe Wireframes" />
-                                </div>
-
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div class="border border-zinc-200 p-6">
-                                        <p class="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2">PRD Focus</p>
-                                        <p class="text-sm font-medium">Defined Fallback States: Ensuring 100% deliverability for Outlook clients.</p>
-                                    </div>
-                                    <div class="border border-zinc-200 p-6">
-                                        <p class="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2">User Stories</p>
-                                        <p class="text-sm font-medium">"As a customer, I want to vote in a poll directly in-email."</p>
-                                    </div>
+                                    <img src="assets/inBoxWire1.png" onerror="this.src='https://via.placeholder.com/800x450?text=Logic+Wireframe'; this.classList.add('opacity-20')" class="w-full h-auto" />
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 03 Interaction Design & High-Fi -->
-                        <div class="flex gap-12 mb-32 items-start relative pl-20 md:pl-32">
-                            <div class="flow-node shrink-0 absolute left-0 md:left-0">03</div>
+                        <!-- 03 Interaction Design -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
                             <div class="flex-1">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Interaction Design</span>
-                                <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">Visualizing Interaction.</h3>
-                                <p class="text-lg text-zinc-500 mb-8 font-light leading-relaxed">I led the design of "Mini-App" components. The challenge was maintaining email lightweight constraints while providing a modern app feel.</p>
-                                
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Design Interaction</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">High-Fidelity Interaction.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Managed the design sprint to create "Mini-App" components. Below is the refined interface for our interactive survey module.</p>
                                 <div class="browser-mockup bg-zinc-100 mb-8 overflow-hidden border-2 border-zinc-200">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
-                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">High-Fidelity Interaction (Figma)</span>
+                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">Refined UI (Figma)</span>
                                     </div>
-                                    <img src="assets/Journey2.png" onerror="this.src='https://via.placeholder.com/800x450?text=Paste+Figma+High-Fi+PNG+Here'; this.classList.add('opacity-20')" class="w-full h-auto" alt="Interaction Flow" />
+                                    <img src="assets/inBoxWire2.png" onerror="this.src='https://via.placeholder.com/800x450?text=Figma+High-Fi'; this.classList.add('opacity-20')" class="w-full h-auto" />
                                 </div>
                             </div>
                         </div>
 
                         <!-- 04 Outcome -->
-                        <div class="flex gap-12 mb-12 items-start relative pl-20 md:pl-32">
-                            <div class="flow-node shrink-0 absolute left-0 md:left-0">04</div>
+                        <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">04</div>
                             <div class="flex-1">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Final Outcome</span>
-                                <h3 class="text-3xl font-black tracking-tight mb-12 uppercase">Measured Success.</h3>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Impact Metrics</span>
+                                <h3 class="text-3xl font-black mb-12 uppercase">Measured Success.</h3>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-100 border border-zinc-100">
                                     <div class="bg-white p-12 text-center border-b md:border-b-0 md:border-r border-zinc-100">
                                         <span class="block text-6xl font-black tracking-tighter mb-2">+40%</span>
@@ -470,11 +487,128 @@
                             </div>
                         </div>
                     </div>
+                `;
+            } else if (id === 'regnier') {
+                body.innerHTML = `
+                    <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
+                        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-6 mb-8">
+                                    <div class="w-12 h-12 bg-black text-white rounded flex items-center justify-center font-black text-xl">R</div>
+                                    <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Finalist (Top 12 of 80)</div>
+                                </div>
+                                <h1 class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">Regnier <br> Challenge.</h1>
+                                <p class="text-xl text-zinc-500 font-light mt-6 max-w-xl leading-relaxed">As the lead PM, I owned the <strong>Venture Makeup</strong> for "Accessible AI"—an assistive extension converting DOM web content into real-time speech and simplified interfaces.</p>
+                                <div class="flex items-center gap-3 mt-8">
+                                    <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">Kansas City, Kansas • April 2025</span>
+                                </div>
+                            </div>
+                            <div class="flex-1 w-full max-sm:hidden">
+                                <div class="browser-mockup bg-white shadow-xl -rotate-2">
+                                    <div class="browser-header">
+                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                    </div>
+                                    <img src="assets/inBoxWire1.png" onerror="this.src='https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-40')" class="w-full h-auto" alt="Prototype Screenshot" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <div class="bg-zinc-900 text-white py-24 px-6 text-center">
-                        <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 block mb-8">Ready for more?</span>
-                        <h3 class="text-4xl font-black mb-12 uppercase">Let's talk product strategy.</h3>
-                        <a href="mailto:hello@example.com" class="bg-white text-black px-8 py-4 font-bold uppercase text-xs tracking-widest hover:bg-zinc-200 transition">Get in Touch</a>
+                    <div class="max-w-5xl mx-auto px-6 py-32">
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-20">
+                            
+                            <div class="lg:col-span-2 space-y-24">
+                                <section>
+                                    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-zinc-400 mb-8 border-b pb-4 italic">The Make-Up & Process</h3>
+                                    <p class="text-lg text-zinc-500 font-light leading-relaxed mb-8">My role involved unifying technical feasibility with a rigorous market strategy in <strong>Kansas</strong>. We started with a <strong>6-minute video pitch</strong> in March, which secured our spot as a Top 12 venture out of 80 global applications. By April, we were in Kansas City presenting a full-scale feasibility plan and functional prototype.</p>
+                                    <div class="bg-zinc-50 p-10 border border-zinc-100 rounded">
+                                        <h4 class="text-xs font-bold uppercase tracking-widest mb-4">Core Contribution: Financial & Feasibility</h4>
+                                        <p class="text-sm text-zinc-600 leading-relaxed mb-6">I led the deep-dive research into <strong>Unit Economics</strong> and <strong>Regulatory compliance (WCAG/ADA)</strong> as our primary market trigger. I validated our plan by modeling LLM API token costs against a tiered B2B subscription model.</p>
+                                        <ul class="text-xs space-y-3 font-medium text-zinc-400">
+                                            <li>• Built financial projections focusing on CAC/LTV benchmarks.</li>
+                                            <li>• Managed the technical roadmap for the Browser Extension MVP.</li>
+                                            <li>• Analyzed 5 key competitors to identify the "Zero-Latency" market gap.</li>
+                                        </ul>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-zinc-400 mb-8 border-b pb-4 italic">Presentation Artifacts (Canva)</h3>
+                                    <div class="space-y-12">
+                                        <div>
+                                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-4 uppercase italic tracking-widest">01. Product Narrative & GTM Strategy (Accessible AI)</p>
+                                            <div class="presentation-frame">
+                                                <iframe loading="lazy" class="absolute inset-0 w-full h-full border-none m-0 p-0"
+                                                    src="https://www.canva.com/design/DAG9lZGkJNs/9QExrQNe3xL1lVVMF32aiA/view?embed" 
+                                                    allowfullscreen="allowfullscreen" allow="fullscreen">
+                                                </iframe>
+                                            </div>
+                                            <a href="https://www.canva.com/design/DAG9lZGkJNs/9QExrQNe3xL1lVVMF32aiA/view" target="_blank" class="text-[10px] text-zinc-400 mt-2 inline-block hover:text-black">View original on Canva →</a>
+                                        </div>
+                                        <div>
+                                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-4 uppercase italic tracking-widest">02. Financial Projections & Scaling Model</p>
+                                            <div class="presentation-frame">
+                                                <iframe loading="lazy" class="absolute inset-0 w-full h-full border-none m-0 p-0"
+                                                    src="https://www.canva.com/design/DAG9lbCyTcs/9kxLISuWL_queEX4nXkYww/view?embed" 
+                                                    allowfullscreen="allowfullscreen" allow="fullscreen">
+                                                </iframe>
+                                            </div>
+                                            <a href="https://www.canva.com/design/DAG9lbCyTcs/9kxLISuWL_queEX4nXkYww/view" target="_blank" class="text-[10px] text-zinc-400 mt-2 inline-block hover:text-black">View original on Canva →</a>
+                                        </div>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-zinc-400 mb-8 italic">Outcome & Feedback</h3>
+                                    <div class="bg-zinc-900 text-white p-12 shadow-xl">
+                                        <p class="text-xl font-light leading-relaxed mb-8 italic">"The learning curve was steep. The judges’ feedback on our API scaling strategy led me to pivot our architecture from cloud-first to a local-processing hybrid, reducing estimated overhead by 40%."</p>
+                                        <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500">Kansas City Finals • April 2025</span>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div class="space-y-12">
+                                <div class="bg-zinc-900 text-white p-10 shadow-2xl">
+                                    <h3 class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Strategy Metrics</h3>
+                                    <div class="space-y-10">
+                                        <div>
+                                            <p class="text-[10px] uppercase font-bold text-zinc-400 mb-1">Market TAM</p>
+                                            <p class="text-3xl font-black tracking-tighter">$14.2B</p>
+                                            <p class="text-[10px] text-zinc-500 mt-2 italic">Assistive Tech Market Cap</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-[10px] uppercase font-bold text-zinc-400 mb-1">Unit Economics</p>
+                                            <p class="text-3xl font-black tracking-tighter">B2B2C</p>
+                                            <p class="text-[10px] text-zinc-500 mt-2 italic">SaaS Scaling Model</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-[10px] uppercase font-bold text-zinc-400 mb-1">Impact Radius</p>
+                                            <p class="text-sm font-medium leading-relaxed">Direct conversion of WCAG 2.1 compliance into a competitive sales advantage.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-8 border-l-2 border-zinc-900">
+                                    <h3 class="text-[10px] font-bold uppercase tracking-widest mb-4 italic">Timeline</h3>
+                                    <ul class="space-y-4 text-xs font-medium">
+                                        <li class="flex justify-between"><span>March</span><span class="font-bold">6-min Pitch Video</span></li>
+                                        <li class="flex justify-between"><span>April</span><span class="font-bold">Top 12 Selection</span></li>
+                                        <li class="flex justify-between"><span>April 2025</span><span class="font-bold">Kansas City Finals</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (id === 'michigan') {
+                body.innerHTML = `
+                    <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6 text-center">
+                        <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-4">Michigan Startup</h1>
+                        <p class="text-zinc-500 uppercase tracking-widest text-[10px] font-bold">5x5 Startup Fund Pitch</p>
+                    </div>
+                    <div class="max-w-3xl mx-auto py-32 px-6">
+                        <p class="text-xl font-light leading-relaxed">Secured funding through a high-pressure 5-minute deep dive into product scalability and MVP validation strategies.</p>
                     </div>
                 `;
             }
@@ -490,45 +624,6 @@
             content.classList.add('translate-x-full');
             setTimeout(() => drawer.classList.add('invisible'), 500);
         }
-
-        // Gemini Logic
-        const labBtn = document.getElementById('lab-submit');
-        const labInput = document.getElementById('lab-input');
-        const labResult = document.getElementById('lab-result');
-        const labContent = document.getElementById('lab-content');
-        const labLoading = document.getElementById('lab-loading');
-
-        labBtn.addEventListener('click', async () => {
-            const idea = labInput.value.trim();
-            if (!idea) return;
-            labLoading.classList.remove('hidden');
-            labBtn.disabled = true;
-            try {
-                const res = await fetchGemini(`Idea: ${idea}`, "Senior PM Strategy Agent. 3 points roadmap. Strategic, analytical tone.");
-                labContent.innerText = res;
-                labResult.classList.remove('hidden');
-            } catch (err) {
-                labContent.innerText = "Error connecting to strategy engine.";
-                labResult.classList.remove('hidden');
-            } finally {
-                labLoading.classList.add('hidden');
-                labBtn.disabled = false;
-            }
-        });
-
-        const enhBtn = document.getElementById('enhancer-btn');
-        const enhInput = document.getElementById('enhancer-input');
-        const enhRes = document.getElementById('enhancer-result');
-        enhBtn.addEventListener('click', async () => {
-            const text = enhInput.value.trim();
-            if (!text) return;
-            enhBtn.innerText = "...";
-            try {
-                const res = await fetchGemini(`Enhance PM task: ${text}`, "Career coach. One impactful PM bullet point with metrics.");
-                enhRes.innerText = res;
-                enhRes.classList.remove('hidden');
-            } catch (e) {} finally { enhBtn.innerText = "Process"; }
-        });
 
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
     </script>

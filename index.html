@@ -50,10 +50,10 @@
             color: #d4d4d8;
         }
 
-        /* Vertical Timeline - Fixed alignment to the far left */
+        /* Vertical Timeline - Left-aligned to avoid text overlap */
         .flow-line {
             position: absolute;
-            left: 24px;
+            left: 20px;
             top: 0;
             bottom: 0;
             width: 1px;
@@ -167,7 +167,7 @@
                 </p>
             </div>
 
-            <!-- Project 2 Placeholder -->
+            <!-- Project 2 -->
             <div class="group cursor-pointer">
                 <div class="browser-mockup mb-8 opacity-60">
                     <div class="browser-header">
@@ -304,7 +304,8 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
 
-            <div id="case-study-body" class="bg-white">
+            <!-- Case Study Content -->
+            <div id="case-study-body" class="bg-white pb-32">
                 <!-- Dynamic Content -->
             </div>
         </div>
@@ -348,7 +349,7 @@
             if (projectId === 'snipe') {
                 body.innerHTML = `
                     <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
-                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
                             <div class="flex-1">
                                 <div class="flex items-center gap-6 mb-8">
                                     <div class="w-12 h-12 bg-black text-white rounded flex items-center justify-center font-black text-xl">S</div>
@@ -371,13 +372,22 @@
                     <div class="max-w-4xl mx-auto px-6 py-32 relative">
                         <div class="flow-line"></div>
 
+                        <!-- 01 Discovery & User Journey -->
                         <div class="flex gap-12 mb-32 items-start relative pl-20 md:pl-32">
-                            <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
+                            <div class="flow-node shrink-0 absolute left-0 md:left-0">01</div>
                             <div class="flex-1">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Discovery & Competition</span>
-                                <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">The Market Gap.</h3>
-                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Traditional emails were static dead-ends. User analytics showed a <strong>65% drop-off</strong> between email click and landing page load. While competitors focused on templates, I identified the true friction was <strong>redirection.</strong></p>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Discovery & User Journey</span>
+                                <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">Mapping the Friction.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Traditional emails were static dead-ends. User analytics showed a <strong>65% drop-off</strong> between email click and landing page load. Users didn't want to leave their inbox; they wanted to finish the task.</p>
                                 
+                                <div class="browser-mockup bg-zinc-100 mb-10 overflow-hidden border-2 border-zinc-200">
+                                    <div class="browser-header">
+                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">User Journey Map</span>
+                                    </div>
+                                    <img src="assets/inBoxWire2.png" onerror="this.src='https://via.placeholder.com/800x450?text=Paste+Journey+Map+PNG+Here'; this.classList.add('opacity-20')" class="w-full h-auto" alt="User Journey Map" />
+                                </div>
+
                                 <div class="bg-zinc-900 text-white p-8">
                                     <h4 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-6 italic">Competition Analysis Matrix</h4>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -394,48 +404,61 @@
                             </div>
                         </div>
 
+                        <!-- 02 Strategic Planning & Wireframes -->
                         <div class="flex gap-12 mb-32 items-start relative pl-20 md:pl-32">
-                            <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
+                            <div class="flow-node shrink-0 absolute left-0 md:left-0">02</div>
                             <div class="flex-1">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Strategy & Planning</span>
-                                <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">Prioritization & PRDs.</h3>
-                                <p class="text-lg text-zinc-500 mb-8 font-light leading-relaxed">I utilized the <strong>RICE Framework</strong> to align the roadmap. High-impact features like "In-Email Survey" were prioritized over animations due to immediate data signals.</p>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Planning & Wireframes</span>
+                                <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">Low-Fi Logic.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">I utilized the <strong>RICE Framework</strong> to align the roadmap. Before building high-fidelity mocks, I drafted wireframes to validate the "In-Email Survey" logic with stakeholders.</p>
                                 
+                                <div class="browser-mockup bg-zinc-100 mb-10 overflow-hidden border-2 border-zinc-200">
+                                    <div class="browser-header">
+                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">Low-Fidelity Wireframes</span>
+                                    </div>
+                                    <img src="assets/Journey1" onerror="this.src='https://via.placeholder.com/800x450?text=Paste+Wireframe+PNG+Here'; this.classList.add('opacity-20')" class="w-full h-auto" alt="Snipe Wireframes" />
+                                </div>
+
                                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div class="border border-zinc-200 p-6">
                                         <p class="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2">PRD Focus</p>
-                                        <p class="text-sm font-medium">Defined Fallback States: Ensuring 100% deliverability for all clients.</p>
+                                        <p class="text-sm font-medium">Defined Fallback States: Ensuring 100% deliverability for Outlook clients.</p>
                                     </div>
                                     <div class="border border-zinc-200 p-6">
                                         <p class="text-xs font-bold uppercase tracking-widest text-zinc-400 mb-2">User Stories</p>
-                                        <p class="text-sm font-medium">Simplified review submission directly in-box.</p>
+                                        <p class="text-sm font-medium">"As a customer, I want to vote in a poll directly in-email."</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- 03 Interaction Design & High-Fi -->
                         <div class="flex gap-12 mb-32 items-start relative pl-20 md:pl-32">
-                            <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
+                            <div class="flow-node shrink-0 absolute left-0 md:left-0">03</div>
                             <div class="flex-1">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Design & Interaction</span>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Interaction Design</span>
                                 <h3 class="text-3xl font-black tracking-tight mb-6 uppercase">Visualizing Interaction.</h3>
+                                <p class="text-lg text-zinc-500 mb-8 font-light leading-relaxed">I led the design of "Mini-App" components. The challenge was maintaining email lightweight constraints while providing a modern app feel.</p>
+                                
                                 <div class="browser-mockup bg-zinc-100 mb-8 overflow-hidden border-2 border-zinc-200">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
-                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">Interaction Architecture (Figma)</span>
+                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">High-Fidelity Interaction (Figma)</span>
                                     </div>
-                                    <img src="assets/snipe-flow.png" onerror="this.src='https://via.placeholder.com/800x450?text=Paste+Figma+Flow+PNG+Here'; this.classList.add('opacity-20')" class="w-full h-auto" alt="Interaction Flow" />
+                                    <img src="assets/Journey2.png" onerror="this.src='https://via.placeholder.com/800x450?text=Paste+Figma+High-Fi+PNG+Here'; this.classList.add('opacity-20')" class="w-full h-auto" alt="Interaction Flow" />
                                 </div>
                             </div>
                         </div>
 
+                        <!-- 04 Outcome -->
                         <div class="flex gap-12 mb-12 items-start relative pl-20 md:pl-32">
-                            <div class="flow-node shrink-0 absolute left-0 md:left-5">04</div>
+                            <div class="flow-node shrink-0 absolute left-0 md:left-0">04</div>
                             <div class="flex-1">
                                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Final Outcome</span>
                                 <h3 class="text-3xl font-black tracking-tight mb-12 uppercase">Measured Success.</h3>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-100 border border-zinc-100">
-                                    <div class="bg-white p-12 text-center">
+                                    <div class="bg-white p-12 text-center border-b md:border-b-0 md:border-r border-zinc-100">
                                         <span class="block text-6xl font-black tracking-tighter mb-2">+40%</span>
                                         <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Checkout Rate</span>
                                     </div>
@@ -468,7 +491,7 @@
             setTimeout(() => drawer.classList.add('invisible'), 500);
         }
 
-        // Gemini AI Logic
+        // Gemini Logic
         const labBtn = document.getElementById('lab-submit');
         const labInput = document.getElementById('lab-input');
         const labResult = document.getElementById('lab-result');

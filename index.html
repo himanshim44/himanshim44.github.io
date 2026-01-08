@@ -6,6 +6,8 @@
     <title>Portfolio — Product Strategy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Instagram Embed Script -->
+    <script async src="//www.instagram.com/embed.js"></script>
     
     <style>
         body { 
@@ -127,6 +129,14 @@
             overflow: hidden;
             box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
         }
+
+        /* Instagram Container Fix */
+        .instagram-media {
+            margin: 0 auto !important;
+            border-radius: 8px !important;
+            border: 1px solid #e4e4e7 !important;
+            box-shadow: none !important;
+        }
     </style>
 </head>
 <body class="bg-white text-zinc-900 leading-relaxed">
@@ -226,7 +236,31 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-            <!-- Comp 1: Regnier -->
+            <!-- Comp: ISU Hackathon (CyConnect) -->
+            <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('hackathon')">
+                <div>
+                    <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-2">3rd Place (100+ Participants)</div>
+                    <h4 class="text-lg font-bold tracking-tight group-hover:text-zinc-600 transition-colors uppercase">Iowa State Hackathon — CyConnect</h4>
+                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Product MVP focused on student engagement & campus rewards.</p>
+                </div>
+                <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
+                    <span class="text-lg font-light leading-none">+</span>
+                </div>
+            </div>
+
+            <!-- Comp: Applied AI Challenge -->
+            <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('appliedai')">
+                <div>
+                    <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">AI Innovation</div>
+                    <h4 class="text-lg font-bold tracking-tight">Iowa State Applied AI Challenge</h4>
+                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Ames • Prototype Showcase & Innovation Sprint</p>
+                </div>
+                <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
+                    <span class="text-lg font-light leading-none">+</span>
+                </div>
+            </div>
+
+            <!-- Comp: Regnier -->
             <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('regnier')">
                 <div>
                     <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">Venture Challenge</div>
@@ -238,11 +272,12 @@
                 </div>
             </div>
             
+            <!-- Comp: Start Garden 5x5 -->
             <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('michigan')">
                 <div>
-                    <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">Startup Fund</div>
-                    <h4 class="text-lg font-bold tracking-tight">Michigan Startup Fund 5x5</h4>
-                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">High-stakes 5-minute pitch for funding.</p>
+                    <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-2">Top 5 Finalist (Solo Venture)</div>
+                    <h4 class="text-lg font-bold tracking-tight group-hover:text-zinc-600 transition-colors uppercase">Start Garden 5x5 Night</h4>
+                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Michigan • Top 5 Winner (Selected from global submissions)</p>
                 </div>
                 <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
                     <span class="text-lg font-light leading-none">+</span>
@@ -254,17 +289,6 @@
                     <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">Innovation Prize</div>
                     <h4 class="text-lg font-bold tracking-tight">Iowa State Innovation Prize</h4>
                     <p class="text-xs text-zinc-500 leading-relaxed mt-2">Cross-disciplinary problem solving challenge.</p>
-                </div>
-                <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
-                    <span class="text-lg font-light leading-none">+</span>
-                </div>
-            </div>
-
-            <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('isuhack')">
-                <div>
-                    <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">College Hackathon</div>
-                    <h4 class="text-lg font-bold tracking-tight">Iowa State Business College Hackathon</h4>
-                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Intensive product sprint and business modeling.</p>
                 </div>
                 <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
                     <span class="text-lg font-light leading-none">+</span>
@@ -384,7 +408,7 @@
                                     <div class="w-12 h-12 bg-black text-white rounded flex items-center justify-center font-black text-xl shadow-lg">S</div>
                                     <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Case Study 01</div>
                                 </div>
-                                <h1 class="text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase leading-none">Snipe inBOX.</h1>
+                                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase leading-none">Snipe inBOX.</h1>
                                 <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs mt-4">AMP-Powered Interactive Marketing</p>
                             </div>
                             <div class="flex-1 w-full max-w-sm">
@@ -401,14 +425,12 @@
                     <div class="max-w-4xl mx-auto px-6 py-32 relative">
                         <div class="flow-line left-[20px] md:left-[40px]"></div>
 
-                        <!-- 01 Discovery & Competition Analysis -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
                             <div class="flex-1">
                                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Discovery & Competition Analysis</span>
                                 <h3 class="text-3xl font-black mb-6 uppercase">Mapping the Friction.</h3>
                                 <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Traditional emails were dead-ends. User analytics showed a <strong>65% drop-off</strong> between email click and landing page load. While standard players like Mailchimp focused on "Better Templates," I identified the true market barrier was <strong>redirection friction.</strong></p>
-                                
                                 <div class="browser-mockup bg-zinc-100 mb-10 overflow-hidden border-2 border-zinc-200">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
@@ -416,31 +438,22 @@
                                     </div>
                                     <img src="assets/Journey2.png" onerror="this.src='https://via.placeholder.com/800x450?text=Journey+Map'; this.classList.add('opacity-20')" class="w-full h-auto" />
                                 </div>
-
                                 <div class="bg-zinc-900 text-white p-8">
                                     <h4 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-6 italic">Strategic Advantage Matrix</h4>
                                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                                        <div>
-                                            <p class="text-[10px] text-zinc-500 font-bold uppercase mb-2">Market Standard</p>
-                                            <p class="text-sm">Static HTML, High Latency, 3+ steps to browser conversion.</p>
-                                        </div>
-                                        <div>
-                                            <p class="text-[10px] text-zinc-400 font-bold uppercase mb-2">Snipe Advantage</p>
-                                            <p class="text-sm text-white font-medium">AMP-Powered, Zero Redirection, 1-step in-inbox interaction.</p>
-                                        </div>
+                                        <div><p class="text-[10px] text-zinc-500 font-bold uppercase mb-2">Market Standard</p><p class="text-sm">Static HTML, High Latency, 3+ steps to browser conversion.</p></div>
+                                        <div><p class="text-[10px] text-zinc-400 font-bold uppercase mb-2">Snipe Advantage</p><p class="text-sm text-white font-medium">AMP-Powered, Zero Redirection, 1-step in-inbox interaction.</p></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 02 Prioritization & PRDs -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
                             <div class="flex-1">
                                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Planning, PRDs & Prioritization</span>
                                 <h3 class="text-3xl font-black mb-6 uppercase">Logic & Planning.</h3>
-                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">I utilized the <strong>RICE Framework</strong> to align the engineering roadmap. High-impact features like "In-Email RSVP" were prioritized over custom animations to drive immediate ROI for our e-commerce beta testers. I authored detailed PRDs to define the <strong>Fallback Logic</strong>—ensuring 100% deliverability for non-AMP clients.</p>
-                                
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">I utilized the <strong>RICE Framework</strong> to align the engineering roadmap. High-impact features like "In-Email RSVP" were prioritized over custom animations to drive immediate ROI for e-commerce beta testers.</p>
                                 <div class="browser-mockup bg-zinc-50 mb-10 overflow-hidden border border-zinc-200">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
@@ -451,13 +464,11 @@
                             </div>
                         </div>
 
-                        <!-- 03 Interaction Design -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
                             <div class="flex-1">
                                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Design Interaction</span>
                                 <h3 class="text-3xl font-black mb-6 uppercase">High-Fidelity Interaction.</h3>
-                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Managed the design sprint to create "Mini-App" components. Below is the refined interface for our interactive survey module.</p>
                                 <div class="browser-mockup bg-zinc-100 mb-8 overflow-hidden border-2 border-zinc-200">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
@@ -468,21 +479,14 @@
                             </div>
                         </div>
 
-                        <!-- 04 Outcome -->
                         <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">04</div>
                             <div class="flex-1">
                                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Impact Metrics</span>
                                 <h3 class="text-3xl font-black mb-12 uppercase">Measured Success.</h3>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-zinc-100 border border-zinc-100">
-                                    <div class="bg-white p-12 text-center border-b md:border-b-0 md:border-r border-zinc-100">
-                                        <span class="block text-6xl font-black tracking-tighter mb-2">+40%</span>
-                                        <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Checkout Rate</span>
-                                    </div>
-                                    <div class="bg-white p-12 text-center">
-                                        <span class="block text-6xl font-black tracking-tighter mb-2">2.5x</span>
-                                        <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">User Engagement</span>
-                                    </div>
+                                    <div class="bg-white p-12 text-center border-b md:border-b-0 md:border-r border-zinc-100"><span class="block text-6xl font-black tracking-tighter mb-2">+40%</span><span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Checkout Rate</span></div>
+                                    <div class="bg-white p-12 text-center"><span class="block text-6xl font-black tracking-tighter mb-2">2.5x</span><span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">User Engagement</span></div>
                                 </div>
                             </div>
                         </div>
@@ -498,104 +502,170 @@
                                     <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Finalist (Top 12 of 80)</div>
                                 </div>
                                 <h1 class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">Regnier <br> Challenge.</h1>
-                                <p class="text-xl text-zinc-500 font-light mt-6 max-w-xl leading-relaxed">As the lead PM, I owned the <strong>Venture Makeup</strong> for "Accessible AI"—an assistive extension converting DOM web content into real-time speech and simplified interfaces.</p>
-                                <div class="flex items-center gap-3 mt-8">
-                                    <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">Kansas City, Kansas • April 2025</span>
-                                </div>
-                            </div>
-                            <div class="flex-1 w-full max-sm:hidden">
-                                <div class="browser-mockup bg-white shadow-xl -rotate-2">
-                                    <div class="browser-header">
-                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
-                                    </div>
-                                    <img src="assets/inBoxWire1.png" onerror="this.src='https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-40')" class="w-full h-auto" alt="Prototype Screenshot" />
-                                </div>
+                                <p class="text-xl text-zinc-500 font-light mt-6 max-w-xl leading-relaxed">Lead PM for <strong>"Accessible AI"</strong>—an assistive extension converting DOM web content into real-time speech and simplified interfaces.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="max-w-5xl mx-auto px-6 py-32">
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-20">
-                            
                             <div class="lg:col-span-2 space-y-24">
-                                <section>
-                                    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-zinc-400 mb-8 border-b pb-4 italic">The Make-Up & Process</h3>
-                                    <p class="text-lg text-zinc-500 font-light leading-relaxed mb-8">My role involved unifying technical feasibility with a rigorous market strategy in <strong>Kansas</strong>. We started with a <strong>6-minute video pitch</strong> in March, which secured our spot as a Top 12 venture out of 80 global applications. By April, we were in Kansas City presenting a full-scale feasibility plan and functional prototype.</p>
-                                    <div class="bg-zinc-50 p-10 border border-zinc-100 rounded">
-                                        <h4 class="text-xs font-bold uppercase tracking-widest mb-4">Core Contribution: Financial & Feasibility</h4>
-                                        <p class="text-sm text-zinc-600 leading-relaxed mb-6">I led the deep-dive research into <strong>Unit Economics</strong> and <strong>Regulatory compliance (WCAG/ADA)</strong> as our primary market trigger. I validated our plan by modeling LLM API token costs against a tiered B2B subscription model.</p>
-                                        <ul class="text-xs space-y-3 font-medium text-zinc-400">
-                                            <li>• Built financial projections focusing on CAC/LTV benchmarks.</li>
-                                            <li>• Managed the technical roadmap for the Browser Extension MVP.</li>
-                                            <li>• Analyzed 5 key competitors to identify the "Zero-Latency" market gap.</li>
-                                        </ul>
-                                    </div>
-                                </section>
-
                                 <section>
                                     <h3 class="text-xs font-black uppercase tracking-[0.3em] text-zinc-400 mb-8 border-b pb-4 italic">Presentation Artifacts (Canva)</h3>
                                     <div class="space-y-12">
                                         <div>
-                                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-4 uppercase italic tracking-widest">01. Product Narrative & GTM Strategy (Accessible AI)</p>
+                                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-4 uppercase italic">01. Product Narrative & GTM Strategy</p>
                                             <div class="presentation-frame">
-                                                <iframe loading="lazy" class="absolute inset-0 w-full h-full border-none m-0 p-0"
+                                                <iframe loading="lazy" class="absolute inset-0 w-full h-full border-none"
                                                     src="https://www.canva.com/design/DAG9lZGkJNs/9QExrQNe3xL1lVVMF32aiA/view?embed" 
                                                     allowfullscreen="allowfullscreen" allow="fullscreen">
                                                 </iframe>
                                             </div>
-                                            <a href="https://www.canva.com/design/DAG9lZGkJNs/9QExrQNe3xL1lVVMF32aiA/view" target="_blank" class="text-[10px] text-zinc-400 mt-2 inline-block hover:text-black">View original on Canva →</a>
                                         </div>
                                         <div>
-                                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-4 uppercase italic tracking-widest">02. Financial Projections & Scaling Model</p>
+                                            <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-4 uppercase italic">02. Financial Projections & Scaling Model</p>
                                             <div class="presentation-frame">
-                                                <iframe loading="lazy" class="absolute inset-0 w-full h-full border-none m-0 p-0"
+                                                <iframe loading="lazy" class="absolute inset-0 w-full h-full border-none"
                                                     src="https://www.canva.com/design/DAG9lbCyTcs/9kxLISuWL_queEX4nXkYww/view?embed" 
                                                     allowfullscreen="allowfullscreen" allow="fullscreen">
                                                 </iframe>
                                             </div>
-                                            <a href="https://www.canva.com/design/DAG9lbCyTcs/9kxLISuWL_queEX4nXkYww/view" target="_blank" class="text-[10px] text-zinc-400 mt-2 inline-block hover:text-black">View original on Canva →</a>
                                         </div>
                                     </div>
                                 </section>
-
-                                <section>
-                                    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-zinc-400 mb-8 italic">Outcome & Feedback</h3>
-                                    <div class="bg-zinc-900 text-white p-12 shadow-xl">
-                                        <p class="text-xl font-light leading-relaxed mb-8 italic">"The learning curve was steep. The judges’ feedback on our API scaling strategy led me to pivot our architecture from cloud-first to a local-processing hybrid, reducing estimated overhead by 40%."</p>
-                                        <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500">Kansas City Finals • April 2025</span>
-                                    </div>
-                                </section>
                             </div>
-
                             <div class="space-y-12">
                                 <div class="bg-zinc-900 text-white p-10 shadow-2xl">
                                     <h3 class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-8 border-b border-zinc-800 pb-4">Strategy Metrics</h3>
                                     <div class="space-y-10">
-                                        <div>
-                                            <p class="text-[10px] uppercase font-bold text-zinc-400 mb-1">Market TAM</p>
-                                            <p class="text-3xl font-black tracking-tighter">$14.2B</p>
-                                            <p class="text-[10px] text-zinc-500 mt-2 italic">Assistive Tech Market Cap</p>
-                                        </div>
-                                        <div>
-                                            <p class="text-[10px] uppercase font-bold text-zinc-400 mb-1">Unit Economics</p>
-                                            <p class="text-3xl font-black tracking-tighter">B2B2C</p>
-                                            <p class="text-[10px] text-zinc-500 mt-2 italic">SaaS Scaling Model</p>
-                                        </div>
-                                        <div>
-                                            <p class="text-[10px] uppercase font-bold text-zinc-400 mb-1">Impact Radius</p>
-                                            <p class="text-sm font-medium leading-relaxed">Direct conversion of WCAG 2.1 compliance into a competitive sales advantage.</p>
-                                        </div>
+                                        <div><p class="text-[10px] uppercase font-bold text-zinc-400 mb-1">Market TAM</p><p class="text-3xl font-black tracking-tighter">$14.2B</p></div>
+                                        <div><p class="text-[10px] uppercase font-bold text-zinc-400 mb-1">Unit Economics</p><p class="text-3xl font-black tracking-tighter">B2B2C</p></div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (id === 'hackathon') {
+                body.innerHTML = `
+                    <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
+                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-6 mb-8">
+                                    <div class="w-12 h-12 bg-emerald-600 text-white rounded flex items-center justify-center font-black text-xl shadow-lg">C</div>
+                                    <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">3rd Place Winner</div>
+                                </div>
+                                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase leading-[0.9]">CyConnect <br> Hackathon.</h1>
+                                <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs">Iowa State Hackathon • 100+ Participants</p>
+                            </div>
+                            <div class="flex-1 w-full max-sm:hidden">
+                                <div class="browser-mockup bg-white shadow-xl rotate-2">
+                                    <div class="browser-header">
+                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                    </div>
+                                    <img src="assets/cyconnect-prototype.png" onerror="this.src='https://images.unsplash.com/photo-1523240715631-09c13da746bd?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-40')" class="w-full h-auto" alt="CyConnect Prototype" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                <div class="p-8 border-l-2 border-zinc-900">
-                                    <h3 class="text-[10px] font-bold uppercase tracking-widest mb-4 italic">Timeline</h3>
-                                    <ul class="space-y-4 text-xs font-medium">
-                                        <li class="flex justify-between"><span>March</span><span class="font-bold">6-min Pitch Video</span></li>
-                                        <li class="flex justify-between"><span>April</span><span class="font-bold">Top 12 Selection</span></li>
-                                        <li class="flex justify-between"><span>April 2025</span><span class="font-bold">Kansas City Finals</span></li>
-                                    </ul>
+                    <div class="max-w-4xl mx-auto px-6 py-32 relative">
+                        <div class="flow-line left-[20px] md:left-[40px]"></div>
+
+                        <!-- 01 The Problem -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Problem Space</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">The Loneliness Epidemic.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">With over 100+ participants competing, our team identified a critical social barrier: student loneliness. Despite being on a busy campus, many students struggle to find meaningful engagement opportunities or a sense of belonging.</p>
+                            </div>
+                        </div>
+
+                        <!-- 02 The Solution -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Product Solution</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Activity & Reward Loop.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">We designed <strong>CyConnect</strong>—a social matching app that incentivizes campus presence. Students can engage in peer-led activities, join campus events, and earn rewards for their participation, creating a gamified "Proof of Presence" system.</p>
+                                
+                                <div class="browser-mockup bg-zinc-50 mb-10 overflow-hidden border border-zinc-200 max-h-[500px]">
+                                    <div class="browser-header">
+                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">Prototype Showcase</span>
+                                    </div>
+                                    <img src="assets/cyconnect-flow.png" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-20')" class="w-full h-auto" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 03 Strategy Presentation -->
+                        <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Strategic Artifacts (Canva)</span>
+                                <h3 class="text-3xl font-black mb-12 uppercase">Venture Pitch & Roadmap.</h3>
+                                <div class="presentation-frame mb-12">
+                                    <iframe loading="lazy" class="absolute inset-0 w-full h-full border-none m-0 p-0"
+                                        src="https://www.canva.com/design/DAGyfIsUIXQ/N9RrLizU68-xknrCf0h7gA/view?embed" 
+                                        allowfullscreen="allowfullscreen" allow="fullscreen">
+                                    </iframe>
+                                </div>
+                                <div class="bg-zinc-900 text-white p-12 text-center shadow-xl">
+                                    <span class="block text-6xl font-black tracking-tighter mb-2">3rd</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Overall Award (Top 3 of 25+ Teams)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else if (id === 'appliedai') {
+                body.innerHTML = `
+                    <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
+                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-6 mb-8">
+                                    <div class="w-12 h-12 bg-emerald-600 text-white rounded flex items-center justify-center font-black text-xl shadow-lg">A</div>
+                                    <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Student Innovation Showcase</div>
+                                </div>
+                                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase leading-[0.9]">Applied AI <br> Challenge.</h1>
+                                <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs">Iowa State Student Innovation Center</p>
+                                <a href="https://sictr.iastate.edu/2025/03/20/applied-ai-challenge-showcases-student-innovation/" target="_blank" class="inline-block mt-8 bg-black text-white text-[10px] font-bold uppercase tracking-widest px-6 py-3 hover:bg-zinc-800 transition shadow-sm">View Official Showcase →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto px-6 py-32 relative">
+                        <div class="flow-line left-[20px] md:left-[40px]"></div>
+
+                        <!-- 01 Skill Acquisition -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Introductory Session</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Building with AI.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">The challenge began with a deep-dive workshop. We were taught how to leverage Large Language Models (LLMs) and accessible AI tools to transition from abstract ideas to functional prototypes in a compressed timeframe.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">The Build Sprint</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Accessible AI Prototype.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">By the second day, we synthesized our technical learnings into the <strong>Accessible AI</strong> project. My role was focused on the "Product Logic"—defining how the AI should simplify complex DOM structures without losing core context for assistive technologies.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">The Pitch</span>
+                                <h3 class="text-3xl font-black mb-12 uppercase">Showcase & Presentation.</h3>
+                                <div class="bg-zinc-900 text-white p-12 shadow-xl">
+                                    <p class="text-xl font-light leading-relaxed mb-8 italic">"Transitioning from a learner on Day 1 to a presenter on Day 2 demonstrated our team's ability to rapidly ingest new technical capabilities and apply them to human-centric product problems."</p>
+                                    <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500">Student Innovation Center • March 2025</span>
                                 </div>
                             </div>
                         </div>
@@ -603,14 +673,107 @@
                 `;
             } else if (id === 'michigan') {
                 body.innerHTML = `
-                    <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6 text-center">
-                        <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-4">Michigan Startup</h1>
-                        <p class="text-zinc-500 uppercase tracking-widest text-[10px] font-bold">5x5 Startup Fund Pitch</p>
+                    <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
+                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-6 mb-8">
+                                    <div class="w-12 h-12 bg-zinc-900 text-white rounded flex items-center justify-center font-black text-xl shadow-lg">5x5</div>
+                                    <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Top 5 Winner</div>
+                                </div>
+                                <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">Signify <br> 5x5 Night.</h1>
+                                <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs mt-4">Start Garden • Grand Rapids, Michigan</p>
+                            </div>
+                            <div class="flex-1 w-full max-sm:hidden">
+                                <div class="browser-mockup bg-white shadow-xl rotate-2">
+                                    <div class="browser-header">
+                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                    </div>
+                                    <img src="assets/Michigan.png" onerror="this.src='https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-40')" class="w-full h-auto" alt="Michigan Pitch Stage" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="max-w-3xl mx-auto py-32 px-6">
-                        <p class="text-xl font-light leading-relaxed">Secured funding through a high-pressure 5-minute deep dive into product scalability and MVP validation strategies.</p>
+
+                    <div class="max-w-4xl mx-auto px-6 py-32 relative">
+                        <div class="flow-line left-[20px] md:left-[40px]"></div>
+
+                        <!-- 01 The Problem -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Problem Statement</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Virtual Silos.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Current virtual platforms do not recognize sign language. This forces the ASL community to rely on human interpreters who are often costly, unavailable, or limit personal privacy in sensitive environments like <strong>online job interviews.</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- 02 The Solution -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Solo Venture</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Independent Communication.</h3>
+                                <p class="text-lg text-zinc-500 mb-8 font-light leading-relaxed">I developed <strong>Signify</strong> to bridge this gap. Using computer vision, the tool converts sign language into text or speech in real-time, allowing the ASL speaker to communicate directly with the other party without third-party friction.</p>
+                                <div class="bg-zinc-50 p-8 border border-zinc-100 italic text-zinc-600 text-sm leading-relaxed mb-10 shadow-sm">
+                                    "Pitching live was a little terrifying, but rewarding. I learned as much from the feedback and the audience reaction as I did from the technical build itself."
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 03 Pitch Artifacts -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Pitch Artifacts (Canva)</span>
+                                <h3 class="text-3xl font-black mb-12 uppercase">5x5 Pitch Deck.</h3>
+                                <div class="presentation-frame mb-12">
+                                    <iframe loading="lazy" class="absolute inset-0 w-full h-full border-none m-0 p-0"
+                                        src="https://www.canva.com/design/DAG9zGxYC8g/mkQMIGyd2SsH5jAPNrhYwg/view?embed" 
+                                        allowfullscreen="allowfullscreen" allow="fullscreen">
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 04 Social Validation -->
+                        <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">04</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Event Highlight</span>
+                                <h3 class="text-3xl font-black mb-12 uppercase">Community Recognition.</h3>
+                                <div class="max-w-[500px] mx-auto bg-white border border-zinc-200 rounded-lg overflow-hidden shadow-2xl">
+                                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DMoE9f3voqK/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
+                                        <div style="padding:16px;"> 
+                                            <a href="https://www.instagram.com/p/DMoE9f3voqK/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+                                                <div style=" display: flex; flex-direction: row; align-items: center;">
+                                                    <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div>
+                                                    <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                                        <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div>
+                                                        <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
+                                                    </div>
+                                                </div>
+                                                <div style="padding: 19% 0;"></div>
+                                                <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.298 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.742,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.298 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div>
+                                                <div style="padding-top: 8px;"> 
+                                                    <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div>
+                                                </div>
+                                                <div style="padding: 12.5% 0;"></div>
+                                            </a>
+                                        </div>
+                                    </blockquote>
+                                </div>
+                                <div class="bg-zinc-900 text-white p-12 shadow-xl mt-12">
+                                    <p class="text-xl font-light leading-relaxed mb-8 italic">"Standalone solo venture presentation. Huge thanks to Start Garden for creating a space for early-stage ideas and believing in the power of community-driven innovation."</p>
+                                    <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500">Selected Top 5 • Grand Rapids, MI • April 2025</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 `;
+                // Re-process Instagram embeds when drawer opens
+                if (window.instgrm) {
+                    window.instgrm.Embeds.process();
+                }
             }
 
             drawer.classList.remove('invisible');

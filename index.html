@@ -284,11 +284,12 @@
                 </div>
             </div>
 
+            <!-- Comp: Innovation Prize (EdMax) -->
             <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('isuprize')">
                 <div>
-                    <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">Innovation Prize</div>
-                    <h4 class="text-lg font-bold tracking-tight">Iowa State Innovation Prize</h4>
-                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Cross-disciplinary problem solving challenge.</p>
+                    <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-2">1st Place — EdTech Category</div>
+                    <h4 class="text-lg font-bold tracking-tight group-hover:text-zinc-600 transition-colors uppercase">Innovation Prize — EdMax</h4>
+                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Personalized learning platform for educators & students.</p>
                 </div>
                 <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
                     <span class="text-lg font-light leading-none">+</span>
@@ -425,6 +426,7 @@
                     <div class="max-w-4xl mx-auto px-6 py-32 relative">
                         <div class="flow-line left-[20px] md:left-[40px]"></div>
 
+                        <!-- 01 Discovery & Competition Analysis -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
                             <div class="flex-1">
@@ -448,6 +450,7 @@
                             </div>
                         </div>
 
+                        <!-- 02 Prioritization & PRDs -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
                             <div class="flex-1">
@@ -464,6 +467,7 @@
                             </div>
                         </div>
 
+                        <!-- 03 Interaction Design -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
                             <div class="flex-1">
@@ -479,6 +483,7 @@
                             </div>
                         </div>
 
+                        <!-- 04 Outcome -->
                         <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">04</div>
                             <div class="flex-1">
@@ -498,7 +503,7 @@
                         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
                             <div class="flex-1">
                                 <div class="flex items-center gap-6 mb-8">
-                                    <div class="w-12 h-12 bg-black text-white rounded flex items-center justify-center font-black text-xl">R</div>
+                                    <div class="w-12 h-12 bg-black text-white rounded flex items-center justify-center font-black text-xl shadow-lg">R</div>
                                     <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Finalist (Top 12 of 80)</div>
                                 </div>
                                 <h1 class="text-6xl md:text-8xl font-black tracking-tighter uppercase leading-[0.9]">Regnier <br> Challenge.</h1>
@@ -639,7 +644,6 @@
                     <div class="max-w-4xl mx-auto px-6 py-32 relative">
                         <div class="flow-line left-[20px] md:left-[40px]"></div>
 
-                        <!-- 01 Skill Acquisition -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
                             <div class="flex-1">
@@ -762,10 +766,6 @@
                                         </div>
                                     </blockquote>
                                 </div>
-                                <div class="bg-zinc-900 text-white p-12 shadow-xl mt-12">
-                                    <p class="text-xl font-light leading-relaxed mb-8 italic">"Standalone solo venture presentation. Huge thanks to Start Garden for creating a space for early-stage ideas and believing in the power of community-driven innovation."</p>
-                                    <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500">Selected Top 5 • Grand Rapids, MI • April 2025</span>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -774,6 +774,73 @@
                 if (window.instgrm) {
                     window.instgrm.Embeds.process();
                 }
+            } else if (id === 'isuprize') {
+                body.innerHTML = `
+                    <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
+                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-6 mb-8">
+                                    <div class="w-12 h-12 bg-black text-white rounded flex items-center justify-center font-black text-xl shadow-lg">E</div>
+                                    <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">1st Place — EdTech Category</div>
+                                </div>
+                                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase leading-[0.9]">EdMax.</h1>
+                                <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs mt-4">Iowa State Innovation Prize</p>
+                            </div>
+                            <div class="flex-1 w-full max-sm:hidden">
+                                <div class="browser-mockup bg-white shadow-xl rotate-2">
+                                    <div class="browser-header">
+                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                    </div>
+                                    <img src="assets/EdMax1.png" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-40')" class="w-full h-auto" alt="EdMax Prototype" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto px-6 py-32 relative">
+                        <div class="flow-line left-[20px] md:left-[40px]"></div>
+
+                        <!-- 01 The Problem -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Problem Context</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Individualized Learning vs. Teacher Burnout.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">Personalized learning is the gold standard of education, but it is often impractical given current teacher workloads. Educators are overwhelmed with data points but lack the time to translate them into individualized lesson plans for 30+ unique learning styles.</p>
+                            </div>
+                        </div>
+
+                        <!-- 02 The Strategy -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Product Logic</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Actionable Student Insights.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed"><strong>EdMax</strong> is a data-driven platform that identifies student strengths, challenges, and preferred learning styles. It translates complex analytics into actionable daily insights for teachers, while providing parents with real-time updates and students with tailored resources. The goal is to make individualized learning practical, not overwhelming.</p>
+                                <div class="browser-mockup bg-zinc-50 mb-10 overflow-hidden border border-zinc-200 shadow-lg">
+                                    <div class="browser-header">
+                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                        <span class="ml-auto text-[8px] uppercase tracking-widest text-zinc-400">Competition Showcase</span>
+                                    </div>
+                                    <img src="assets/EdMax2.png" onerror="this.src='https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-20')" class="w-full h-auto" alt="EdMax Presentation" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 03 Strategy Recap -->
+                        <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">The Result</span>
+                                <h3 class="text-3xl font-black mb-12 uppercase">1st Place Success.</h3>
+                                <div class="bg-zinc-900 text-white p-12 shadow-xl">
+                                    <p class="text-xl font-light leading-relaxed mb-8 italic">"For me, this project was about more than building an app. It was about showing that the best innovation in education happens when it is led by the people who live and work in the field every day, not just by what is perceived to be needed from the outside."</p>
+                                    <span class="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500">Innovation Prize Winner • March 2025 • Ames, IA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
             }
 
             drawer.classList.remove('invisible');

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio — Product Strategy</title>
+    <title>Himanshi — Product Strategy Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Instagram Embed Script -->
@@ -50,6 +50,7 @@
             font-weight: 800;
             letter-spacing: 0.2em;
             color: #d4d4d8;
+            z-index: 0;
         }
 
         /* Vertical Timeline - Left aligned to avoid text overlap */
@@ -144,7 +145,7 @@
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-sm border-b border-zinc-100">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-bold tracking-tight text-lg italic uppercase">Himanshi Mendiratta</a>
+            <a href="#" class="font-bold tracking-tight text-lg italic uppercase">Himanshi</a>
             <div class="flex items-center space-x-8 text-[13px] font-medium uppercase tracking-widest text-zinc-500">
                 <a href="#work" class="hover:text-zinc-900 transition">Work</a>
                 <a href="#competitions" class="hover:text-zinc-900 transition">Competitions</a>
@@ -171,10 +172,11 @@
             </div>
             
             <div class="lg:w-1/3 w-full max-w-[320px]">
-                <div class="profile-image-container aspect-[4/5] border border-zinc-100 overflow-hidden">
-                    <img src="assets/Himanshi.jpeg" 
-                         alt="Your Name" 
-                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                <div class="profile-image-container aspect-[4/5] border border-zinc-100 overflow-hidden relative z-10">
+                    <img src="Himanshi.jpeg" 
+                         alt="Himanshi" 
+                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700 relative z-10"
+                         onerror="this.style.opacity='0'; this.parentElement.classList.add('bg-zinc-100')">
                 </div>
             </div>
         </div>
@@ -236,6 +238,18 @@
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+            <!-- Comp: Food Insecurity Challenge (Cyclone Round-Up) -->
+            <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('foodinsecurity')">
+                <div>
+                    <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-2">Runner Up Selection</div>
+                    <h4 class="text-lg font-bold tracking-tight group-hover:text-zinc-600 transition-colors uppercase">Food Insecurity Challenge — Cyclone Round-Up</h4>
+                    <p class="text-xs text-zinc-500 leading-relaxed mt-2">Iowa State • Social Innovation focused on campus spending.</p>
+                </div>
+                <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
+                    <span class="text-lg font-light leading-none">+</span>
+                </div>
+            </div>
+
             <!-- Comp: ISU Hackathon (CyConnect) -->
             <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('hackathon')">
                 <div>
@@ -251,8 +265,8 @@
             <!-- Comp: Applied AI Challenge -->
             <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('appliedai')">
                 <div>
-                    <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">AI Innovation</div>
-                    <h4 class="text-lg font-bold tracking-tight">Iowa State Applied AI Challenge</h4>
+                    <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest mb-2">3rd Place Winner</div>
+                    <h4 class="text-lg font-bold tracking-tight group-hover:text-zinc-600 transition-colors uppercase">Iowa State Applied AI Challenge</h4>
                     <p class="text-xs text-zinc-500 leading-relaxed mt-2">Ames • Prototype Showcase & Innovation Sprint</p>
                 </div>
                 <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
@@ -264,7 +278,7 @@
             <div class="comp-card cursor-pointer border border-zinc-100 p-8 group flex justify-between items-center" onclick="openDrawer('regnier')">
                 <div>
                     <div class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2">Venture Challenge</div>
-                    <h4 class="text-lg font-bold tracking-tight group-hover:text-zinc-600 transition-colors">Regnier Venture Creation Challenge</h4>
+                    <h4 class="text-lg font-bold tracking-tight group-hover:text-zinc-600 transition-colors uppercase">Regnier Venture Creation Challenge</h4>
                     <p class="text-xs text-zinc-500 leading-relaxed mt-2">Kansas • Finalist (Selected Top 12 of 80 Applications)</p>
                 </div>
                 <div class="plus-icon w-8 h-8 rounded-full border border-zinc-200 flex items-center justify-center shrink-0">
@@ -412,7 +426,7 @@
                                 <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase leading-none">Snipe inBOX.</h1>
                                 <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs mt-4">AMP-Powered Interactive Marketing</p>
                             </div>
-                            <div class="flex-1 w-full max-w-sm">
+                            <div class="flex-1 w-full max-sm:hidden">
                                 <div class="browser-mockup bg-white shadow-xl rotate-2">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
@@ -426,7 +440,6 @@
                     <div class="max-w-4xl mx-auto px-6 py-32 relative">
                         <div class="flow-line left-[20px] md:left-[40px]"></div>
 
-                        <!-- 01 Discovery & Competition Analysis -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
                             <div class="flex-1">
@@ -450,7 +463,6 @@
                             </div>
                         </div>
 
-                        <!-- 02 Prioritization & PRDs -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
                             <div class="flex-1">
@@ -467,7 +479,6 @@
                             </div>
                         </div>
 
-                        <!-- 03 Interaction Design -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
                             <div class="flex-1">
@@ -483,7 +494,6 @@
                             </div>
                         </div>
 
-                        <!-- 04 Outcome -->
                         <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">04</div>
                             <div class="flex-1">
@@ -594,7 +604,6 @@
                                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Product Solution</span>
                                 <h3 class="text-3xl font-black mb-6 uppercase">Activity & Reward Loop.</h3>
                                 <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">We designed <strong>CyConnect</strong>—a social matching app that incentivizes campus presence. Students can engage in peer-led activities, join campus events, and earn rewards for their participation, creating a gamified "Proof of Presence" system.</p>
-                                
                                 <div class="browser-mockup bg-zinc-50 mb-10 overflow-hidden border border-zinc-200 max-h-[500px]">
                                     <div class="browser-header">
                                         <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
@@ -605,7 +614,6 @@
                             </div>
                         </div>
 
-                        <!-- 03 Strategy Presentation -->
                         <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
                             <div class="flex-1">
@@ -625,6 +633,73 @@
                         </div>
                     </div>
                 `;
+            } else if (id === 'foodinsecurity') {
+                body.innerHTML = `
+                    <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
+                        <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+                            <div class="flex-1">
+                                <div class="flex items-center gap-6 mb-8">
+                                    <div class="w-12 h-12 bg-emerald-600 text-white rounded flex items-center justify-center font-black text-xl shadow-lg">C</div>
+                                    <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Runner Up Selection</div>
+                                </div>
+                                <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase leading-none">Cyclone <br> Round-Up.</h1>
+                                <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs mt-4">Iowa State Food Insecurity Challenge</p>
+                            </div>
+                            <div class="flex-1 w-full max-sm:hidden">
+                                <div class="browser-mockup bg-white shadow-xl rotate-2">
+                                    <div class="browser-header">
+                                        <div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div>
+                                    </div>
+                                    <img src="assets/CycloneRoundUp.png" onerror="this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1000'; this.classList.add('opacity-40')" class="w-full h-auto" alt="Competition Highlight" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="max-w-4xl mx-auto px-6 py-32 relative">
+                        <div class="flow-line left-[20px] md:left-[40px]"></div>
+
+                        <!-- 01 Discovery -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Discovery Phase</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">The Hunger Buffet.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">The challenge began with an immersive "Hunger Buffet" session, where our team engaged with critical data and lived experiences regarding food insecurity on campus. This learning phase was pivotal in shifting our focus from "Big Philanthropy" to "Micro-Donations."</p>
+                            </div>
+                        </div>
+
+                        <!-- 02 Solution -->
+                        <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Product Solution</span>
+                                <h3 class="text-3xl font-black mb-6 uppercase">Cyclone Round-Up.</h3>
+                                <p class="text-lg text-zinc-500 mb-10 font-light leading-relaxed">We proposed a seamless integration into on-campus point-of-sale systems. <strong>Cyclone Round-Up</strong> allows students, faculty, and staff to round up their purchases to the nearest dollar. These micro-donations are pooled into a fund to support food-insecure Cyclones, making support low-friction and community-driven.</p>
+                            </div>
+                        </div>
+
+                        <!-- 03 Strategy Presentation -->
+                        <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
+                            <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
+                            <div class="flex-1">
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Pitch Artifacts (Canva)</span>
+                                <h3 class="text-3xl font-black mb-12 uppercase">Venture Pitch & Presentation.</h3>
+                                <div class="presentation-frame mb-12">
+                                    <iframe loading="lazy" class="absolute inset-0 w-full h-full border-none m-0 p-0"
+                                        src="https://www.canva.com/design/DAG9-wmjsH8/WEkrRVrTYHraFafZ-iN2zA/view?embed" 
+                                        allowfullscreen="allowfullscreen" allow="fullscreen">
+                                    </iframe>
+                                </div>
+                                <div class="bg-zinc-900 text-white p-12 shadow-xl text-center">
+                                    <p class="text-[10px] uppercase font-bold tracking-[0.3em] text-zinc-500 mb-4">Presentation Date</p>
+                                    <span class="block text-4xl font-black tracking-tighter uppercase mb-2 italic">November 19, 2025</span>
+                                    <span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Iowa State • Finalist Selection</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
             } else if (id === 'appliedai') {
                 body.innerHTML = `
                     <div class="bg-zinc-50 border-b border-zinc-100 pt-32 pb-20 px-6">
@@ -632,7 +707,7 @@
                             <div class="flex-1">
                                 <div class="flex items-center gap-6 mb-8">
                                     <div class="w-12 h-12 bg-emerald-600 text-white rounded flex items-center justify-center font-black text-xl shadow-lg">A</div>
-                                    <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">Student Innovation Showcase</div>
+                                    <div class="inline-block bg-zinc-900 text-white text-[10px] font-bold px-3 py-1 uppercase tracking-widest">3rd Place Winner</div>
                                 </div>
                                 <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-4 uppercase leading-[0.9]">Applied AI <br> Challenge.</h1>
                                 <p class="text-zinc-500 font-medium uppercase tracking-[0.2em] text-xs">Iowa State Student Innovation Center</p>
@@ -701,7 +776,6 @@
                     <div class="max-w-4xl mx-auto px-6 py-32 relative">
                         <div class="flow-line left-[20px] md:left-[40px]"></div>
 
-                        <!-- 01 The Problem -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
                             <div class="flex-1">
@@ -711,20 +785,15 @@
                             </div>
                         </div>
 
-                        <!-- 02 The Solution -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
                             <div class="flex-1">
                                 <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Solo Venture</span>
                                 <h3 class="text-3xl font-black mb-6 uppercase">Independent Communication.</h3>
                                 <p class="text-lg text-zinc-500 mb-8 font-light leading-relaxed">I developed <strong>Signify</strong> to bridge this gap. Using computer vision, the tool converts sign language into text or speech in real-time, allowing the ASL speaker to communicate directly with the other party without third-party friction.</p>
-                                <div class="bg-zinc-50 p-8 border border-zinc-100 italic text-zinc-600 text-sm leading-relaxed mb-10 shadow-sm">
-                                    "Pitching live was a little terrifying, but rewarding. I learned as much from the feedback and the audience reaction as I did from the technical build itself."
-                                </div>
                             </div>
                         </div>
 
-                        <!-- 03 Pitch Artifacts -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
                             <div class="flex-1">
@@ -739,12 +808,11 @@
                             </div>
                         </div>
 
-                        <!-- 04 Social Validation -->
                         <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">04</div>
                             <div class="flex-1">
-                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Event Highlight</span>
-                                <h3 class="text-3xl font-black mb-12 uppercase">Community Recognition.</h3>
+                                <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 block mb-4">Community Recognition</span>
+                                <h3 class="text-3xl font-black mb-12 uppercase">Social Validation.</h3>
                                 <div class="max-w-[500px] mx-auto bg-white border border-zinc-200 rounded-lg overflow-hidden shadow-2xl">
                                     <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DMoE9f3voqK/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14">
                                         <div style="padding:16px;"> 
@@ -756,7 +824,7 @@
                                                         <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div>
                                                     </div>
                                                 </div>
-                                                <div style="padding: 19% 0;"></div>
+                                                <div style="padding: 12.5% 0;"></div>
                                                 <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.298 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.742,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.298 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div>
                                                 <div style="padding-top: 8px;"> 
                                                     <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div>
@@ -800,7 +868,6 @@
                     <div class="max-w-4xl mx-auto px-6 py-32 relative">
                         <div class="flow-line left-[20px] md:left-[40px]"></div>
 
-                        <!-- 01 The Problem -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">01</div>
                             <div class="flex-1">
@@ -810,7 +877,6 @@
                             </div>
                         </div>
 
-                        <!-- 02 The Strategy -->
                         <div class="flex gap-12 mb-32 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">02</div>
                             <div class="flex-1">
@@ -827,7 +893,6 @@
                             </div>
                         </div>
 
-                        <!-- 03 Strategy Recap -->
                         <div class="flex gap-12 mb-12 items-start relative pl-16 md:pl-24">
                             <div class="flow-node shrink-0 absolute left-0 md:left-5">03</div>
                             <div class="flex-1">
